@@ -37,7 +37,6 @@ function writeToTemplate(examples, templatePath) {
     const template = fs.readFileSync(templatePath, 'utf8');
     const compiled = hbs.compile(template);
     const html = compiled({examples});
-    console.log(html);
     fs.writeFileSync(indexPath, html);
 }
 
