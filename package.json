@@ -10,15 +10,14 @@
     "pre-commit": "^1.2.2"
   },
   "scripts": {
-    "build": "cd utils && node build.js"
+    "start": "cd scripts && node start.js",
+    "build": "cd scripts && node build.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danish1994/HoudiniCSS.git"
   },
-  "pre-commit": [
-    "build"
-  ],
+  "pre-commit": [],
   "author": "",
   "license": "ISC",
   "bugs": {

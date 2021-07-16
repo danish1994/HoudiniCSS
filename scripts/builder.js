@@ -7,9 +7,9 @@ class Builder {
     constructor() {
         this.projectBasePath = path.join(__dirname, '../');
         this.distPath = path.join(this.projectBasePath, './dist');
-        this.basePath = path.join(this.projectBasePath, './examples');
-        this.homeTemplatePath = path.join(this.projectBasePath, './utils/home.hbs');
-        this.baseTemplatePath = path.join(this.projectBasePath, './utils/layout.hbs');
+        this.srcPath = path.join(this.projectBasePath, './examples');
+        this.homeTemplatePath = path.join(this.projectBasePath, './templates/home.hbs');
+        this.baseTemplatePath = path.join(this.projectBasePath, './templates/layout.hbs');
     }
 
     convertToTitleCase(str) {
@@ -31,7 +31,7 @@ class Builder {
     }
 
     getAllExamples() {
-        return this.scanPaths(this.basePath);
+        return this.scanPaths(this.srcPath);
     }
 
     removeDir(currentPath = this.distPath) {
@@ -104,7 +104,7 @@ class Builder {
         fs.writeFileSync(outputPath, html);
     }
 
-    run() {
+    build() {
         this.removeDir();
         this.initBuild();
 
@@ -115,7 +115,22 @@ class Builder {
 
         this.writeToHome(examples);
     }
+
+    watchChanges() {
+        fs.watch(this.srcPath, () => {
+            console.log('Compiling Changes');
+            this.build();
+        });
+    }
+
+    serve() {
+
+    }
+
+    start() {
+        this.watchChanges();
+        this.serve();
+    }
 }
 
-const builder = new Builder();
-builder.run();
+module.exports = Builder;
