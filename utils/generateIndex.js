@@ -16,7 +16,7 @@ function scanPaths(basePath) {
     const files = fs.readdirSync(basePath);
     if (files.includes('index.html')) {
         examples.push({
-            path: basePath.replace(projectBasePath, '/'),
+            path: basePath.replace(projectBasePath, './'),
             name: convertToTitleCase(basePath.split('/').pop())
         })
     } else {
