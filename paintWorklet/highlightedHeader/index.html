@@ -1,0 +1,27 @@
+<html>
+<head>
+    <style>
+        h1 {
+            background-image: paint(highlighter);
+        }
+
+        h2 {
+            --highlightColor: hsla(155, 90%, 60%, 1.0);
+            background-image: paint(highlighter);
+        }
+    </style>
+    <script>
+        if (CSS['paintWorklet'] !== undefined) {
+            CSS.paintWorklet.addModule('highlighter.js').then(() => {
+                console.log('Paint Worklet Loaded');
+            });
+        } else {
+            alert('Paint Worklet Not Supported!')
+        }
+    </script>
+</head>
+<body>
+<h1>This is a Header</h1>
+<h2>This is 2nd Header</h2>
+</body>
+</html>
