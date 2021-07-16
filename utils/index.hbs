@@ -8,12 +8,11 @@
     Examples
 </h1>
 <ul>
+    {{#each examples}}
         <li>
-            <a href="./examples/paintWorklet/highlightedHeader">Highlighted Header</a>
+            <a href="{{this.path}}">{{this.name}}</a>
         </li>
-    <li>
-        <a href="./examples/paintWorklet/highlightedHeader">Highlighted Header</a>
-    </li>
+    {{/each}}
 </ul>
 </body>
 </html>

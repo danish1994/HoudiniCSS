@@ -1,0 +1,28 @@
+{
+  "name": "houdinicss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "handlebars": "^4.7.7"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
+  },
+  "scripts": {
+    "build": "cd utils && node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danish1994/HoudiniCSS.git"
+  },
+  "pre-commit": [
+    "build"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danish1994/HoudiniCSS/issues"
+  },
+  "homepage": "https://github.com/danish1994/HoudiniCSS#readme"
+}
