@@ -13,7 +13,7 @@ registerPaint('highlighter', class {
         const blockWidth = size.width * 0.33;
         const highlightHeight = size.height * 0.85;
 
-        ctx.fillStyle = props.get('--highlightColor')[0] ? props.get('--highlightColor') : 'hsla(55, 90%, 60%, 1.0)';
+        ctx.fillStyle = props.get('--highlightColor').toString() || 'hsla(55, 90%, 60%, 1.0)';
 
         // block
         ctx.beginPath();
