@@ -1,0 +1,8 @@
+h1 {
+    background-image: paint(highlighter);
+}
+
+h2 {
+    --highlightColor: hsla(155, 90%, 60%, 1.0);
+    background-image: paint(highlighter);
+}

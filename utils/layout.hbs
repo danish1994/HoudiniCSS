@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Houdini CSS - Examples {{#if name}}| {{name}}{{/if}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{#each styles}}
+        <style>
+                {{{this}}}
+        </style>
+    {{/each}}
+    {{#each scripts}}
+        <script>
+                {{{this}}}
+        </script>
+    {{/each}}
+</head>
+<body>
+{{{body}}}
+</body>
+</html>
